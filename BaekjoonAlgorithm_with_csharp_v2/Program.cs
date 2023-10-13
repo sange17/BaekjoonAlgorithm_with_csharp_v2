@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BaekjoonAlgorithm_with_csharp_v2.Mathematics;
 
 namespace BaekjoonAlgorithm_with_csharp_v2
 {
@@ -10,6 +7,9 @@ namespace BaekjoonAlgorithm_with_csharp_v2
     {
         static void Main(string[] args)
         {
+            Mathematics_29163 func = new Mathematics_29163();
+
+            func.solve();
         }
     }
 }
