@@ -1,5 +1,6 @@
 ﻿using System;
 using BaekjoonAlgorithm_with_csharp_v2.Mathematics;
+using BaekjoonAlgorithm_with_csharp_v2.Implementation;
 
 namespace BaekjoonAlgorithm_with_csharp_v2
 {
@@ -7,7 +8,7 @@ namespace BaekjoonAlgorithm_with_csharp_v2
     {
         static void Main(string[] args)
         {
-            Mathematics_29163 func = new Mathematics_29163();
+            Implementation_02448 func = new Implementation_02448();
 
             func.solve();
         }
