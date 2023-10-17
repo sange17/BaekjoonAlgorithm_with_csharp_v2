@@ -47,6 +47,7 @@
     <Compile Include="Implementation\Implementation_02448.cs" />
     <Compile Include="Mathematics\Mathematics_29163.cs" />
     <Compile Include="Mathematics\Mathematics_30030.cs" />
+    <Compile Include="Mathematics\Mathematics_30224.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
