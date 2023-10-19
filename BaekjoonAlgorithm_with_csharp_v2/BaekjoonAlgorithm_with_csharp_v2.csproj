@@ -49,6 +49,7 @@
     <Compile Include="Mathematics\Mathematics_30030.cs" />
     <Compile Include="Mathematics\Mathematics_30224.cs" />
     <Compile Include="Mathematics\Mathematics_30328.cs" />
+    <Compile Include="Mathematics\Mathematics_10830.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
