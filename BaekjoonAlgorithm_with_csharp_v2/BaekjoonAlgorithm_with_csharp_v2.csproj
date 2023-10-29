@@ -46,7 +46,9 @@
     <Compile Include="Graphs\Graphs_01987.cs" />
     <Compile Include="Graphs\Graphs_02638.cs" />
     <Compile Include="Implementation\Implementation_02448.cs" />
+    <Compile Include="Implementation\Implementation_26495.cs" />
     <Compile Include="Implementation\Implementation_28490.cs" />
+    <Compile Include="Implementation\Implementation_29340.cs" />
     <Compile Include="Implementation\Implementation_30087.cs" />
     <Compile Include="Mathematics\Mathematics_27262.cs" />
     <Compile Include="Mathematics\Mathematics_27267.cs" />
