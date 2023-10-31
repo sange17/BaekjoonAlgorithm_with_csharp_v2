@@ -2,6 +2,7 @@
 using BaekjoonAlgorithm_with_csharp_v2.Mathematics;
 using BaekjoonAlgorithm_with_csharp_v2.Implementation;
 using BaekjoonAlgorithm_with_csharp_v2.Graphs;
+using BaekjoonAlgorithm_with_csharp_v2.DP;
 
 namespace BaekjoonAlgorithm_with_csharp_v2
 {
@@ -9,7 +10,7 @@ namespace BaekjoonAlgorithm_with_csharp_v2
     {
         static void Main(string[] args)
         {
-            Implementation_17144 func = new Implementation_17144();
+            DP_11054 func = new DP_11054();
 
             func.solve();
         }
