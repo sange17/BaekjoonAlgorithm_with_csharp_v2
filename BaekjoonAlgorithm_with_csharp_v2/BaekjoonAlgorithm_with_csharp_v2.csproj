@@ -53,6 +53,7 @@
     <Compile Include="Implementation\Implementation_28490.cs" />
     <Compile Include="Implementation\Implementation_29340.cs" />
     <Compile Include="Implementation\Implementation_30087.cs" />
+    <Compile Include="Mathematics\Mathematics_13172.cs" />
     <Compile Include="Mathematics\Mathematics_27262.cs" />
     <Compile Include="Mathematics\Mathematics_27267.cs" />
     <Compile Include="Mathematics\Mathematics_28352.cs" />
