@@ -6,27 +6,19 @@ namespace BaekjoonAlgorithm_with_csharp_v2.Graphs
 {
     class Graphs_01043
     {
-        static int[] parents;
-        static List<int> eList;
+        static int[] parent;
 
-        static int find(int x)
+        public int find(int idx)
         {
-            if (parents[x] == x) return x;
-            return find(parents[x]);
+            if (parent[idx] == idx) return idx;
+            parent[idx] = find(parent[idx]);
+            return parent[idx];
         }
 
-        static void union(int x, int y)
+        public void union(int a, int b)
         {
-            int rx = find(x);
-            int ry = find(y);
-            if(eList.Contains(ry))
-            {
-                int tmp = rx;
-                rx = ry;
-                ry = tmp;
-            }
-
-            parents[ry] = rx;
+            int parent_b = find(b);
+            parent[parent_b] = a;       // b의 parent를 a로 변경
         }
 
         public void solve()
@@ -34,74 +26,100 @@ namespace BaekjoonAlgorithm_with_csharp_v2.Graphs
             StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
             StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
 
-            string line = sr.ReadLine();
-            int n = Int32.Parse(line.Split(' ')[0]);
-            int m = Int32.Parse(line.Split(' ')[1]);
+            string[] inputs = sr.ReadLine().Split(' ');
 
-            parents = new int[n + 1];
-            for(int i = 1; i < n + 1; i++)
+            int n = Int32.Parse(inputs[0]);
+            int m = Int32.Parse(inputs[1]);
+
+            bool[] people_know = new bool[n + 1];   // 알고있으면 T, 아니면 F
+
+            HashSet<int>[] parties = new HashSet<int>[m + 1];
+            for(int i = 1; i <= m; i++)
             {
-                parents[i] = i;
+                parties[i] = new HashSet<int>();
             }
 
-            line = sr.ReadLine();
-            int en = Int32.Parse(line.Split(' ')[0]);
-            eList = new List<int>();
-            
-            if(en == 0)
+            inputs = sr.ReadLine().Split(' ');
+            int know_num = Int32.Parse(inputs[0]);
+
+            // 진실을 아는 사람은 T
+            int tmp = 0;
+            for(int i = 1; i <= know_num; i++)
             {
-                sw.WriteLine(m);
-                return;
+                tmp = Int32.Parse(inputs[i]);
+                people_know[tmp] = true;
             }
-            else
+
+            parent = new int[n + 1];
+            for(int i = 1; i <= n; i++)
             {
-                for(int i = 0; i < en; i++)
+                parent[i] = i;
+            }
+
+            // party number
+            for(int p = 1; p <= m; p++)
+            {
+                inputs = sr.ReadLine().Split(' ');
+                int party_num = Int32.Parse(inputs[0]); // 파티에 오는 사람 수
+
+                if(party_num <= 1)
                 {
-                    eList.Add(Int32.Parse(line.Split(' ')[i]));
+                    parties[p].Add(Int32.Parse(inputs[1]));
+                    continue;
                 }
-            }
 
-            List<int>[] partyList = new List<int>[m];
-            for(int i = 0; i < m; i++)
-            {
-                partyList[i] = new List<int>();
-            }
-
-            for(int i = 0; i < m; i++)
-            {
-                line = sr.ReadLine();
-                int pn = Int32.Parse(line.Split(' ')[0]);
-
-                int x = Int32.Parse(line.Split(' ')[1]);
-                partyList[i].Add(x);
-                for(int j = 1; j < pn; j++)
+                // 연관 관계 이어줌
+                int a = 0;
+                int b = 0;
+                for(int j = 1; j < party_num; j++)
                 {
-                    int y = Int32.Parse(line.Split(' ')[j]);
-                    union(x, y);
-                    partyList[i].Add(y);
-                }
-            }
-
-            int count = 0;
-            for(int i = 0; i < m; i++)
-            {
-                Boolean flag = true;
-                foreach(int num in partyList[i])
-                {
-                    if(eList.Contains(find(parents[num])))
+                    a = Int32.Parse(inputs[j]);
+                    b = Int32.Parse(inputs[j + 1]);
+                    if(find(a) != find(b))
                     {
-                        flag = false;
+                        union(a, b);
+                    }
+
+                    parties[p].Add(a);      // 파티에 참여하는 사람 저장
+                    parties[p].Add(b);
+                }
+            }
+
+            // 진실을 아는 사람과 연관 관계 있음 => people_know[i] T로 변경
+            bool[] visited = new bool[n + 1];
+            for(int i = 1; i <= n; i++)
+            {
+                if(people_know[i] && !visited[i])
+                {
+                    int root = find(i);
+                    for(int j = 1; j <= n; j++)
+                    {
+                        if(find(j) == root)
+                        {
+                            people_know[j] = true;
+                            visited[j] = true;
+                        }
+                    }
+                }
+            }
+
+            // 모든 파티 참석자가 F여야 과장된 얘기를 할 수 있음
+            int result = 0;
+            for(int i = 1; i <= m; i++)
+            {
+                bool flag = false;
+                foreach(int person in parties[i])
+                {
+                    if(people_know[person])
+                    {
+                        flag = true;
                         break;
                     }
                 }
-
-                if (flag) count++;
+                if (!flag) result++;
             }
 
-            sw.WriteLine(count);
-
-            sr.Close();
-            sw.Close();
+            Console.WriteLine(result);
         }
     }
 }
