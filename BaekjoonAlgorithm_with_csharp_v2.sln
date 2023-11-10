@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.34114.132
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaekjoonAlgorithm_with_csharp_v2", "BaekjoonAlgorithm_with_csharp_v2\BaekjoonAlgorithm_with_csharp_v2.csproj", "{B1C5B538-95DB-44A8-B897-A6BFC924DEC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaekjoonAlgorithm_with_csharp_dotnet6", "BaekjoonAlgorithm_with_csharp_dotnet6\BaekjoonAlgorithm_with_csharp_dotnet6.csproj", "{EC6F1976-B955-4D99-8AA6-4BB27F8B3884}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B1C5B538-95DB-44A8-B897-A6BFC924DEC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1C5B538-95DB-44A8-B897-A6BFC924DEC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1C5B538-95DB-44A8-B897-A6BFC924DEC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC6F1976-B955-4D99-8AA6-4BB27F8B3884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC6F1976-B955-4D99-8AA6-4BB27F8B3884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC6F1976-B955-4D99-8AA6-4BB27F8B3884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC6F1976-B955-4D99-8AA6-4BB27F8B3884}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
