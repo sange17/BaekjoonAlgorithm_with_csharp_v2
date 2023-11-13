@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BaekjoonAlgorithm_with_csharp_dotnet6.Graphs
 {
-    internal class Graphs_11779
+    class Graphs_11779
     {
+        
     }
 }
