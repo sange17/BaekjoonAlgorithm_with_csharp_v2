@@ -1,4 +1,5 @@
 ﻿using System;
+using BaekjoonAlgorithm_with_csharp_dotnet6.DP;
 using BaekjoonAlgorithm_with_csharp_dotnet6.Graphs;
 using BaekjoonAlgorithm_with_csharp_dotnet6.Implementation;
 using BaekjoonAlgorithm_with_csharp_dotnet6.Mathematics;
@@ -10,7 +11,7 @@ namespace BaekjoonAlgorithm_with_csharp_v2
     {
         static void Main(string[] args)
         {
-            Mathematics_29751 func = new Mathematics_29751();
+            DP_01509 func = new DP_01509();
 
             func.solve();
         }
