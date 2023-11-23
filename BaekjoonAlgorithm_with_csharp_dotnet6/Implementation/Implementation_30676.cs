@@ -4,7 +4,7 @@ namespace BaekjoonAlgorithm_with_v2.implementation
 {
     class Implementation_30676
     {
-        static void Main(String[] args)
+        public void solve()
         {
             int N = Int32.Parse(Console.ReadLine());
 
