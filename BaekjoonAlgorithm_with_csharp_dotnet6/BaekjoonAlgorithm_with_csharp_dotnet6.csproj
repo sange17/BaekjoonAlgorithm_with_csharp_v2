@@ -11,4 +11,13 @@
     <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="PRE\PRE_Strings\" />
+    <Folder Include="PRE\PRE_Mathematics\" />
+    <Folder Include="PRE\PRE_Implementation\" />
+    <Folder Include="PRE\PRE_Greedy\" />
+    <Folder Include="PRE\PRE_Graphs\" />
+    <Folder Include="PRE\PRE_DP\" />
+  </ItemGroup>
+
 </Project>
