@@ -1,4 +1,5 @@
 ﻿using System;
+using BaekjoonAlgorithm_with_csharp_dotnet6.Data_Structures;
 using BaekjoonAlgorithm_with_csharp_dotnet6.DP;
 using BaekjoonAlgorithm_with_csharp_dotnet6.Geometry;
 using BaekjoonAlgorithm_with_csharp_dotnet6.Graphs;
@@ -13,7 +14,7 @@ namespace BaekjoonAlgorithm_with_csharp_v2
     {
         static void Main(string[] args)
         {
-            Geometry_01027 func = new Geometry_01027();
+            Data_Structures_01655 func = new Data_Structures_01655();
 
             func.solve();
         }
