@@ -14,7 +14,7 @@ namespace BaekjoonAlgorithm_with_csharp_v2
     {
         static void Main(string[] args)
         {
-            Data_Structures_05052 func = new Data_Structures_05052();
+            Data_Structures_15903 func = new Data_Structures_15903();
 
             func.solve();
         }
