@@ -6,6 +6,7 @@ using BaekjoonAlgorithm_with_csharp_dotnet6.Graphs;
 using BaekjoonAlgorithm_with_csharp_dotnet6.Greedy;
 using BaekjoonAlgorithm_with_csharp_dotnet6.Implementation;
 using BaekjoonAlgorithm_with_csharp_dotnet6.Mathematics;
+using BaekjoonAlgorithm_with_csharp_dotnet6.PRE.PRE_Mathematics;
 using BaekjoonAlgorithm_with_csharp_dotnet6.PRE.PRE_Strings;
 using BaekjoonAlgorithm_with_csharp_dotnet6.Strings;
 
@@ -15,7 +16,7 @@ namespace BaekjoonAlgorithm_with_csharp_v2
     {
         static void Main(string[] args)
         {
-            Graphs_01197 func = new Graphs_01197();
+            Mathematics_05893 func = new Mathematics_05893();
 
             func.solve();
         }
