@@ -16,6 +16,7 @@
     <Folder Include="PRE\PRE_Greedy\" />
     <Folder Include="PRE\PRE_Graphs\" />
     <Folder Include="PRE\PRE_DP\" />
+    <Folder Include="PRE\PRE_Strings\" />
   </ItemGroup>
 
 </Project>
