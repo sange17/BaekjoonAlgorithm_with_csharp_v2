@@ -15,7 +15,7 @@ namespace BaekjoonAlgorithm_with_csharp_v2
     {
         static void Main(string[] args)
         {
-            Implementation_23812 func = new Implementation_23812();
+            DP_02342 func = new DP_02342();
 
             func.solve();
         }
