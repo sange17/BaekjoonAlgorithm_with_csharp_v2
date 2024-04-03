@@ -9,18 +9,18 @@
             int K = Int32.Parse(line.Split(" ")[1]);
             int count = 0;
 
-            if(N <= K)
+            if (N <= K)
             {
                 Console.Write(0);
                 return;
             }
 
             int buy = 0;
-            while(true)
+            while (true)
             {
                 count = 0;
                 int copyN = N;
-                while(copyN != 0)
+                while (copyN != 0)
                 {
                     if (copyN % 2 == 1)
                     {
