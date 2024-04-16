@@ -15,7 +15,7 @@ namespace BaekjoonAlgorithm_with_csharp_v2
     {
         static void Main(string[] args)
         {
-            Mathematics_01485 func = new Mathematics_01485();
+            Mathematics_16937 func = new Mathematics_16937();
 
             func.solve();
         }
