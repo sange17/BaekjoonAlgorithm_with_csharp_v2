@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Numerics;
 
-namespace BaekjoonAlgorithm_with_csharp_dotnet6.PRE.PRE_Mathematics
+namespace BaekjoonAlgorithm_with_csharp_dotnet6.Mathematics
 {
     class Mathematics_05893
     {
@@ -24,7 +24,7 @@ namespace BaekjoonAlgorithm_with_csharp_dotnet6.PRE.PRE_Mathematics
             string result = "";
             while (bigInteger > 0)
             {
-                result = (bigInteger % 2) + result;
+                result = bigInteger % 2 + result;
                 bigInteger /= 2;
             }
 
