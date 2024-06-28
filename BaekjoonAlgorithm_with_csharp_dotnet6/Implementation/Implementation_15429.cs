@@ -14,26 +14,20 @@
             {
                 array = sr.ReadLine().Split(" ");
 
-                for (int j = 2; j <= Int32.Parse(array[0]) - 1; j++)
+                int m = Int32.Parse(array[0]) - 1;
+                for (int j = 1; j <= m - 1; j++)
                 {
-                    int before = Int32.Parse(array[j - 1]);
-                    int curr = Int32.Parse(array[j]);
-                    int after = Int32.Parse((array[j + 1]));
-                    if (curr - before != 1 && after - curr == 1)
+                    if (Int32.Parse(array[j]) + 1 == Int32.Parse(array[j + 1]))
+                        continue;
+                    else
                     {
-                        sw.WriteLine(before);
-                        break;
-                    }
-                    else if (curr - before == 1 && after - curr != 1)
-                    {
-                        sw.WriteLine(after);
+                        sw.WriteLine(j + 1);
                         break;
                     }
                 }
-
-                sr.Close();
-                sw.Close();
             }
+            sr.Close();
+            sw.Close();
         }
     }
 }
