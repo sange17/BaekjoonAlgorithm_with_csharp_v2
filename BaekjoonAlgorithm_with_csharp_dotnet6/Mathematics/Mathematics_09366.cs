@@ -4,48 +4,39 @@
     {
         public void solve()
         {
-            StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
-            StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
-
-            int n = Int32.Parse(sr.ReadLine());
-            string[] lines = new string[3];
+            int n = Convert.ToInt32(Console.ReadLine());
 
             for(int i = 1; i <= n; i++)
             {
-                lines = sr.ReadLine().Split(" ");
-
-                Array.Sort(lines);
-
-                int a = Int32.Parse(lines[0]);
-                int b = Int32.Parse(lines[1]);
-                int c = Int32.Parse(lines[2]);
-
-                // 1 2 3
-                // 1 2 2 
-                // 2 2 2 
-                // 1 1 2
-                if (a + b <= c)
+                string? line = Console.ReadLine();
+                if (!string.IsNullOrEmpty(line))
                 {
-                    sw.Write("Case #" + i + ": invalid!");
-                }
-                else if ((a == b) && (b == c))
-                {
-                    sw.Write("Case #" + i + ": equilateral");
-                }
-                else if ((a == b) || (b == c))
-                {
-                    sw.Write("Case #" + i + ": isosceles");
-                }
-                else
-                {
-                    sw.Write("Case #" + i + ": scalene");
-                }
+                    int[] lines = Array.ConvertAll(line.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries), int.Parse);
 
-                if (i != n) sw.WriteLine();
+                    Array.Sort(lines);
+
+                    int a = lines[0];
+                    int b = lines[1];
+                    int c = lines[2];
+
+                    if (a + b <= c)
+                    {
+                        Console.WriteLine("Case #" + i + ": invalid!");
+                    }
+                    else if ((a == b) && (a == c))
+                    {
+                        Console.WriteLine("Case #" + i + ": equilateral");
+                    }
+                    else if ((a == b) || (a == c) || (b == c))
+                    {
+                        Console.WriteLine("Case #" + i + ": isosceles");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Case #" + i + ": scalene");
+                    }
+                }
             }
-
-            sr.Close();
-            sw.Close();
         }
     }
 }
