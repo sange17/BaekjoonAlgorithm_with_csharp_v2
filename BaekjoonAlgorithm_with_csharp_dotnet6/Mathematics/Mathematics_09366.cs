@@ -8,6 +8,7 @@
 
             for(int i = 1; i <= n; i++)
             {
+                // null 체크하지 않아서 많이 틀린 문제
                 string? line = Console.ReadLine();
                 if (!string.IsNullOrEmpty(line))
                 {
