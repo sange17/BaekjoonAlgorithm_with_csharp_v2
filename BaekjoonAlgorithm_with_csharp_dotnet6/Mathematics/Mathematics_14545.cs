@@ -4,6 +4,7 @@
     {
         public void solve()
         {
+            // 입출력
             StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
             StreamWriter sw = new StreamWriter(new BufferedStream(Console.OpenStandardOutput()));
 
