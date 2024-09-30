@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="PRE\Contest\" />
     <Folder Include="PRE\PRE_Implementation\" />
     <Folder Include="PRE\PRE_Greedy\" />
     <Folder Include="PRE\PRE_Graphs\" />
