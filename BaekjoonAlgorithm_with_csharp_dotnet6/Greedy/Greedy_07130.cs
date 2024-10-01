@@ -18,7 +18,6 @@
                 int b = Int32.Parse(line.Split(" ")[1]);
                 sum += Math.Max(m * c, h * b);
             }
-
             Console.Write(sum);
         }
     }
