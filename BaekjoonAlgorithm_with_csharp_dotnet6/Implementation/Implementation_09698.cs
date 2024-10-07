@@ -1,13 +1,11 @@
-﻿using System.ComponentModel;
-
-namespace BaekjoonAlgorithm_with_csharp_dotnet6.Implementation
+﻿namespace BaekjoonAlgorithm_with_csharp_dotnet6.Implementation
 {
     class Implementation_09698
     {
         public void solve()
         {
             int n = Int32.Parse(Console.ReadLine()!);
-            for (int i = 0; i < n; i++)
+            for (int i = 1; i <= n; i++)
             {
                 string line = Console.ReadLine()!;
                 int h = Int32.Parse(line.Split(" ")[0]);
