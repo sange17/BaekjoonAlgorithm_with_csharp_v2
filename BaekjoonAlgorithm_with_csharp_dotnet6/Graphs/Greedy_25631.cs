@@ -1,31 +1,48 @@
-﻿using System;
-
-namespace BaekjoonAlgorithm_with_csharp_dotnet6.Graphs
+﻿namespace BaekjoonAlgorithm_with_csharp_dotnet6.Graphs
 {
     class Greedy_25631
     {
         public void solve()
         {
-            int N = int.Parse(Console.ReadLine());
-            int[] martroshkas = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int N = int.Parse(Console.ReadLine()!);
+            int[] martroshkas = Console.ReadLine()!.Split().Select(int.Parse).ToArray();
 
-            Array.Sort(martroshkas);
-            int remaining = 0; // 남은 마트로시카의 개수
-            int prevSize = martroshkas[0]; // 첫 번째 마트로시카의 크기로 초기화
+            Dictionary<int, int> dictionary = new Dictionary<int, int>();
 
-            for (int i = 1; i < N; i++)
+            int max = 0;
+            for (int i = 0; i < N; i++)
             {
-                if (martroshkas[i] > prevSize)
+                if (dictionary.ContainsKey(martroshkas[i]))
                 {
-                    prevSize = martroshkas[i];
+                    dictionary[martroshkas[i]]++;
                 }
                 else
                 {
-                    remaining++;
+                    dictionary.Add(martroshkas[i], 1);
                 }
+
+                if (max < dictionary[martroshkas[i]])
+                    max = dictionary[martroshkas[i]];
             }
 
-            Console.WriteLine(N - remaining);
+            int count = 0;
+            while (true)
+            {
+                if (N == 0) break;
+
+                foreach(var item in dictionary)
+                {
+                    if(item.Value > 0)
+                    {
+                        dictionary[item.Key]--;
+                        N--;
+                    }
+                }
+
+                count++;
+            }
+
+            Console.Write(count);
         }
     }
 }
