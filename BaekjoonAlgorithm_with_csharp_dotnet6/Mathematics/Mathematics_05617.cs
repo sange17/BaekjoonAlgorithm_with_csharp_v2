@@ -13,30 +13,30 @@
                 string line = Console.ReadLine()!;
                 if (string.IsNullOrEmpty(line))
                 {
-                    Console.Write(triangleCnt + " " + righttriCnt + " " + acutetriCnt + " " + obtusetriCnt);
+                    Console.WriteLine(triangleCnt + " " + righttriCnt + " " + acutetriCnt + " " + obtusetriCnt);
                     break;
                 }
 
                 int[] array = line.Split(" ").Select(int.Parse).ToArray();
                 Array.Sort(array);
-
-                if (array[2] == array[0] + array[1])
+                
+                if (array[2] >= array[0] + array[1])
                 {
-                    Console.Write(triangleCnt + " " + righttriCnt + " " + acutetriCnt + " " + obtusetriCnt);
+                    Console.WriteLine(triangleCnt + " " + righttriCnt + " " + acutetriCnt + " " + obtusetriCnt);
                     break;
                 }
                 //직각
-                else if ((array[2] * array[2]) == (array[0] * array[0] + array[1] * array[1]))
+                else if ((array[2] * array[2]) == ((array[0] * array[0]) + (array[1] * array[1])))
                 {
                     righttriCnt++;
                 }
                 //예각
-                else if ((array[2] * array[2]) < (array[0] * array[0] + array[1] * array[1]))
+                else if ((array[2] * array[2]) < ((array[0] * array[0]) + (array[1] * array[1])))
                 {
                     acutetriCnt++; 
                 }
                 //둔각
-                else if ((array[2] * array[2]) > (array[0] * array[0] + array[1] * array[1]))
+                else if ((array[2] * array[2]) > ((array[0] * array[0]) + (array[1] * array[1])))
                 {
                     obtusetriCnt++;
                 }
