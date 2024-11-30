@@ -28,6 +28,7 @@
 
                 sw.WriteLine("Set #" + idx);
                 sw.WriteLine("The minimum number of moves is " + sum +".");
+                sw.WriteLine();
                 idx++;
             }
         }
