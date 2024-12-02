@@ -1,5 +1,6 @@
 ﻿namespace BaekjoonAlgorithm_with_csharp_dotnet6.Mathematics
 {
+    // 최대공약수 활용 문제
     class Mathematics_02702
     {
         public int GCD(int a, int b)
