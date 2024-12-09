@@ -21,7 +21,7 @@
 
                 int count = 0;
                 int idx = 1;
-                int num = Int32.Parse(line);
+                long num = long.Parse(line);
                 while (true)
                 {
                     if (!array.Contains(false))
