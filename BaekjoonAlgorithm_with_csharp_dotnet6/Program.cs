@@ -16,7 +16,6 @@ namespace BaekjoonAlgorithm_with_csharp_v2
     {
         static void Main(string[] args)
         {
-            // merge 테스트
             Mathematics_33161 func = new Mathematics_33161();
 
             func.solve();
