@@ -4,6 +4,7 @@
     {
         public void solve()
         {
+            // merge 테스트
             int A = Int32.Parse(Console.ReadLine()!);
             int B = Int32.Parse(Console.ReadLine()!);
 
