@@ -2,6 +2,7 @@
 {
     class Strings_30999
     {
+        // 백준 작성 완료
         public void solve()
         {
             string line = Console.ReadLine()!;
