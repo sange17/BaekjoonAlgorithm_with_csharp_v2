@@ -16,7 +16,6 @@
                 else if (line[i] == 'l') sw.Write("L");
             }
 
-            //test
             sr.Close();
             sw.Close();
         }
