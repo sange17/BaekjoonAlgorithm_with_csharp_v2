@@ -2,6 +2,7 @@
 {
     class Mathematics_17450
     {
+        // test
         public void solve()
         {
             string result = string.Empty;
