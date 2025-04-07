@@ -8,7 +8,7 @@
             string answer = "Either";
             if (n % 2 == 0)
             {
-                //n == 6, (2,3,4,5,6,7)
+                //n == 6, (2,3,4,5,6,7)//
                 if((n / 2) % 2 == 1) answer = "Odd";
                 else answer = "Even";
             }
