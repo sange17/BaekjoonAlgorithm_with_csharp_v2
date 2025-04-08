@@ -4,6 +4,7 @@
     {
         public void solve()
         {
+            //
             int n = Int32.Parse(Console.ReadLine()!);
             int[] arrayN = Console.ReadLine()!.Split(" ").Select(int.Parse).ToArray();
             int k = Int32.Parse(Console.ReadLine()!);
