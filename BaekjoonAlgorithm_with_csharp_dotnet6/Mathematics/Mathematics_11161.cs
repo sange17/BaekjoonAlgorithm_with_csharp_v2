@@ -21,7 +21,6 @@
                     if (p1 <= p2)
                     {
                         min += (p2 - p1);
-                        sum = 0;
                     }
                     else sum += (p1 - p2);
                 }
