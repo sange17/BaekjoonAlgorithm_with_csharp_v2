@@ -2,6 +2,9 @@
 {
     class Mathematics_33515
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public void solve()
         {
             StreamReader sr = new StreamReader(new BufferedStream(Console.OpenStandardInput()));
