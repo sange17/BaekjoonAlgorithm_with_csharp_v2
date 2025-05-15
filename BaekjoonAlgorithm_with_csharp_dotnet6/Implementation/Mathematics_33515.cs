@@ -3,7 +3,7 @@
     class Mathematics_33515
     {
         /// <summary>
-        /// Maht.Min 사용 예제
+        /// Maht.Min 사용 예제 test
         /// </summary>
         public void solve()
         {
