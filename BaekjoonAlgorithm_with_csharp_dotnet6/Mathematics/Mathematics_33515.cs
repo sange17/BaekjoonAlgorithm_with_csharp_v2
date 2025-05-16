@@ -1,4 +1,4 @@
-﻿namespace BaekjoonAlgorithm_with_csharp_dotnet6.Implementation
+﻿namespace BaekjoonAlgorithm_with_csharp_dotnet6.Mathematics
 {
     class Mathematics_33515
     {
@@ -12,8 +12,8 @@
 
             string line = sr.ReadLine();
 
-            int a = Int32.Parse(line.Split(" ")[0]);
-            int b = Int32.Parse(line.Split(" ")[1]);
+            int a = int.Parse(line.Split(" ")[0]);
+            int b = int.Parse(line.Split(" ")[1]);
 
             sw.Write(Math.Min(a, b));
 
