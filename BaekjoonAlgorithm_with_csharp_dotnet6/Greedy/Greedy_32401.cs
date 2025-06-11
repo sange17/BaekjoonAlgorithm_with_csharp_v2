@@ -4,32 +4,39 @@
     {
         public void solve()
         {
-            int n = int.Parse(Console.ReadLine()!);
-            string line = Console.ReadLine()!;
-
-            bool a1 = false;
-            bool n1 = false;
-            bool a2 = false;
+            int N = int.Parse(Console.ReadLine()!);
+            string S = Console.ReadLine()!;
             int count = 0;
-            for (int i = 0; i < n; i++)
-            {
-                if (line[i] == 'A' && !a1)
-                    a1 = true;
-                else if (line[i] == 'N' && a1 && !n1)
-                    n1 = true;
-                else if (line[i] == 'A' && a1 && n1 && !a2)
-                    a2 = true;
 
-                if (a1 && n1 && a2)
+            // 모든 길이 3 이상 부분 문자열 검사
+            for (int i = 0; i < N; i++)
+            {
+                for (int len = 3; i + len <= N; len++)
                 {
-                    count++;
-                    a1 = true;
-                    n1 = false;
-                    a2 = false;
+                    string sub = S.Substring(i, len);
+                    if (IsSimilarANA(sub))
+                        count++;
                 }
             }
 
-            Console.Write(count);
+            Console.WriteLine(count);
+        }
+
+        // 유사 ANA 문자열인지 확인하는 함수
+        static bool IsSimilarANA(string s)
+        {
+            if (s[0] != 'A' || s[^1] != 'A') return false;
+
+            int aCount = 0;
+            int nCount = 0;
+            foreach (char c in s)
+            {
+                if (c == 'A') aCount++;
+                if (c == 'N') nCount++;
+            }
+
+            return aCount == 2 && nCount == 1;
+            
         }
     }
 }
