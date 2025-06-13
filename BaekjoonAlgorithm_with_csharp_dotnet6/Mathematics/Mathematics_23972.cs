@@ -4,24 +4,24 @@
     {
         public void solve()
         {
-            long[] array = Console.ReadLine()!.Split(" ").Select(long.Parse).ToArray();
+            string[] input = Console.ReadLine()!.Split();
+            long K = long.Parse(input[0]);
+            long N = long.Parse(input[1]);
 
-            if (array[1] == 1)
+            if (N == 1)
             {
-                Console.Write(-1);
+                Console.WriteLine(-1);
             }
             else
             {
-                long nmulk = array[0] * array[1];
-                long nmink = array[1] - 1;
-                long x = nmulk / nmink;
+                // X >= KN / (N - 1)
+                long numerator = K * N;
+                long denominator = N - 1;
 
-                // 악마와 거래한 돈 > 처음에 소지한 돈
-                if ((x - array[0]) * array[1] < x)
-                    Console.Write(x + array[0]);
-                // 악마와 거래한 돈 <= 처음에 소지한 돈
-                else 
-                    Console.Write(x);
+                // 올림을 위해 나누어 떨어지지 않으면 +1
+                long result = (numerator + denominator - 1) / denominator;
+
+                Console.WriteLine(result);
             }
         }
     }
