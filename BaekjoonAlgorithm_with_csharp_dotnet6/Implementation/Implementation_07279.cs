@@ -8,7 +8,8 @@
             int n = Convert.ToInt32(line.Split(" ")[0]);
             int k = Convert.ToInt32(line.Split(" ")[1]);
 
-            int sum = 0;
+            int standing = 0;
+            int total = 0;
             int max = 0;
             for (int i = 0; i < n; i++)
             {
@@ -16,17 +17,11 @@
                 int ai = Convert.ToInt32(line.Split(" ")[0]);
                 int bi = Convert.ToInt32(line.Split(" ")[1]);
 
-                sum += ai;
-                sum -= bi;
+                total += ai;
+                total -= bi;
 
-                if (sum > k)
-                {
-                    sum -= k;
-                    if (max < sum)
-                    {
-                        max = sum;
-                    }
-                }
+                standing = Math.Max(0, total - k);
+                max = Math.Max(max, standing);
             }
 
             Console.Write(max);
