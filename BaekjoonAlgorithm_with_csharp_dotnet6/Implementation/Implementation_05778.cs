@@ -6,39 +6,34 @@
         {
             while (true)
             {
-                string line = Console.ReadLine()!;
+                string[] input = Console.ReadLine().Split();
+                int N = int.Parse(input[0]);
+                int M = int.Parse(input[1]);
 
-                if (line == "0 0")
-                {
+                if (N == 0 && M == 0)
                     break;
-                }
 
-                int N = Convert.ToInt32(line.Split(' ')[0]);
-                int M = Convert.ToInt32(line.Split(' ')[1]);
-                string line2 = Console.ReadLine()!;
+                string[] ticketsInput = Console.ReadLine().Split();
+                Dictionary<int, int> ticketCounts = new Dictionary<int, int>();
 
-                if (M == 1)
+                for (int i = 0; i < M; i++)
                 {
-                    Console.WriteLine(0);
+                    int ticket = int.Parse(ticketsInput[i]);
+
+                    if (ticketCounts.ContainsKey(ticket))
+                        ticketCounts[ticket]++;
+                    else
+                        ticketCounts[ticket] = 1;
                 }
-                else
+
+                int clonedTicketTypes = 0;
+                foreach (var count in ticketCounts.Values)
                 {
-                    string[] array = line2.Split(' ');
-                    int[] ints = new int[array.Length];
-
-                    for (int i = 0; i < array.Length; i++)
-                        ints[i] = 0;
-
-                    for (int i = 0; i < array.Length; i++)
-                        ints[Convert.ToInt32(array[i]) - 1]++;
-
-                    int count = 0;
-                    for (int i = 0; i < array.Length; i++)
-                        if (ints[i] > 1) count++;
-
-
-                    Console.WriteLine(count);
+                    if (count > 1)
+                        clonedTicketTypes++;  // 중복된 번호 하나로 1 증가
                 }
+
+                Console.WriteLine(clonedTicketTypes);
             }
         }
     }
