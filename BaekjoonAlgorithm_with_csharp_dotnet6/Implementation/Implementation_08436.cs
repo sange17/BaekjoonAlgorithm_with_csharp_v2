@@ -9,7 +9,7 @@
             int result = 1;
             for (int i = 0; i < line.Length; i++)
             {
-                if (line[i] == 'L' || line[i] == 'F')
+                if (line[i] == 'L' || line[i] == 'F' || line[i] == 'D' || line[i] == 'T')
                     result *= 2;
                 else
                     result *= 1;
