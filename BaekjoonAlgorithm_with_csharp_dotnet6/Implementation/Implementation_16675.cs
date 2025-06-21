@@ -4,116 +4,57 @@
     {
         public void solve()
         {
-            string[] array = Console.ReadLine()!.Split();
-            string[] msArr = new string[2] { array[0], array[1] };
-            string[] tkArr = new string[2] { array[2], array[3] };
+            string[] input = Console.ReadLine()!.Split();
+            string ML = input[0];
+            string MR = input[1];
+            string TL = input[2];
+            string TR = input[3];
 
-            string result = "";
-            // 둘 다 같은 걸 낼 때
-            if (msArr[0] == msArr[1] && tkArr[0] == tkArr[1])
+            string[] minseong = { ML, MR };
+            string[] taekyung = { TL, TR };
+
+            Dictionary<string, string> winMap = new Dictionary<string, string>
             {
-                // 같은 것을 냈지만 서로 종류가 다른 경우
-                if (msArr[0] != tkArr[0])
+                { "S", "P" }, // 가위 > 보
+                { "P", "R" }, // 보 > 바위
+                { "R", "S" }  // 바위 > 가위
+            };
+
+            bool MSWins = false;
+            bool TKWins = false;
+
+            // 민성이가 무조건 이길 수 있는 경우
+            foreach (string mHand in minseong)
+            {
+                if (Beats(mHand, TL, winMap) && Beats(mHand, TR, winMap))
                 {
-                    if (msArr[0] == "R" && tkArr[0] == "S")
-                        result = "MS";
-                    else if (msArr[0] == "R" && tkArr[0] == "P")
-                        result = "TK";
-                    else if (msArr[0] == "S" && tkArr[0] == "R")
-                        result = "TK";
-                    else if (msArr[0] == "S" && tkArr[0] == "P")
-                        result = "MS";
-                    else if (msArr[0] == "P" && tkArr[0] == "R")
-                        result = "MS";
-                    else if (msArr[0] == "P" && tkArr[0] == "S")
-                        result = "TK";
+                    MSWins = true;
+                    break;
                 }
             }
-            // 민성이만 같은 걸 낼 때
-            else if (msArr[0] == msArr[1] && tkArr[0] != tkArr[1])
+
+            // 태경이가 무조건 이길 수 있는 경우
+            foreach (string tHand in taekyung)
             {
-                if (msArr[0] == "R")
+                if (Beats(tHand, ML, winMap) && Beats(tHand, MR, winMap))
                 {
-                    if (tkArr.Contains("S"))
-                        result = "MS";
-                    if (tkArr.Contains("P"))
-                        result = "TK";
-                }
-                if (msArr[0] == "S")
-                {
-                    if (tkArr.Contains("R"))
-                        result = "TK";
-                    if (tkArr.Contains("P"))
-                        result = "MS";
-                }
-                if (msArr[0] == "P")
-                {
-                    if (tkArr.Contains("R"))
-                        result = "MS";
-                    if (tkArr.Contains("S"))
-                        result = "TK";
+                    TKWins = true;
+                    break;
                 }
             }
-            // 태경이만 같은 걸 낼 때
-            else if (msArr[0] != msArr[1] && tkArr[0] == tkArr[1])
-            {
-                if (tkArr[0] == "R")
-                {
-                    if (msArr.Contains("S"))
-                        result = "TK";
-                    if (msArr.Contains("P"))
-                        result = "MS";
-                }
-                if (tkArr[0] == "S")
-                {
-                    if (msArr.Contains("R"))
-                        result = "MS";
-                    if (msArr.Contains("P"))
-                        result = "TK";
-                }
-                if (tkArr[0] == "P")
-                {
-                    if (msArr.Contains("R"))
-                        result = "TK";
-                    if (msArr.Contains("S"))
-                        result = "MS";
-                }
-            }
-            // 둘 다 다른 걸 낼 때
+
+            if (MSWins)
+                Console.WriteLine("MS");
+            else if (TKWins)
+                Console.WriteLine("TK");
             else
-            {
-                if (msArr.Contains("R") && tkArr.Contains("R"))
-                {
-                    if (msArr.Contains("S") && tkArr.Contains("P"))
-                        result = "MS";
-                    if (msArr.Contains("P") && tkArr.Contains("S"))
-                        result = "TK";
-                }
-                else if (msArr.Contains("S") && tkArr.Contains("S"))
-                {
-                    if (msArr.Contains("R") && tkArr.Contains("P"))
-                        result = "TK";
-                    if (msArr.Contains("P") && tkArr.Contains("R"))
-                        result = "MS";
-                }
-                else if (msArr.Contains("P") && tkArr.Contains("P"))
-                {
-                    if (msArr.Contains("R") && tkArr.Contains("S"))
-                        result = "MS";
-                    if (msArr.Contains("S") && tkArr.Contains("R"))
-                        result = "TK";
-                }
-            }
-            
-            if (string.IsNullOrEmpty(result))
-            {
-                result = "?";
-                Console.Write(result);
-            }else
-            {
-                Console.Write(result);
-            }
+                Console.WriteLine("?");
+        }
 
+        // 가위바위보 이기는지 체크
+        static bool Beats(string a, string b, Dictionary<string, string> winMap)
+        {
+            return winMap[a] == b;
         }
     }
 }
