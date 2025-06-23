@@ -5,23 +5,25 @@ namespace BaekjoonAlgorithm_with_csharp_dotnet6.Mathematics
 {
     class Mathematics_27434
     {
-        public static BigInteger fact(int a, int n)
-        {
-            BigInteger ret = new BigInteger(a);
-
-            if (a < n)
-            {
-                int b = (a + n) / 2;
-                ret = fact(a, b) * (fact(b + 1, n)); //두개로 나눠서 풀이
-            }
-            return ret;
-        }
-
         public void solve()
         {
-            int N = Int32.Parse(Console.ReadLine());
+            int n = int.Parse(Console.ReadLine()!);
+            Console.Out.Write(FastFactorial(n));
+        }
 
-            Console.WriteLine(fact(1, N));
+        static BigInteger FastFactorial(int n)
+        {
+            if (n < 2) return BigInteger.One;
+            return Product(2, n);
+        }
+
+        static BigInteger Product(int low, int high)
+        {
+            if (low > high) return BigInteger.One;
+            if (low == high) return new BigInteger(low);
+            if (high - low == 1) return new BigInteger(low) * new BigInteger(high);
+            int mid = (low + high) / 2;
+            return Product(low, mid) * Product(mid + 1, high);
         }
     }
 }
